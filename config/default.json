@@ -1,0 +1,72 @@
+{
+    "env": "development",
+    "plugins": {
+      "trustdb": {
+        "enabled": true,
+        "storage": "memory"
+      },
+      "solana": {
+        "enabled": true,
+        "network": "devnet",
+        "rpcEndpoint": "https://api.devnet.solana.com",
+        "wsEndpoint": "wss://api.devnet.solana.com"
+      },
+      "solana-agentkit": {
+        "enabled": true
+      },
+      "solana-trading": {
+        "enabled": true,
+        "settings": {
+          "network": {
+            "cluster": "devnet",
+            "endpoint": "https://api.devnet.solana.com",
+            "wsEndpoint": "wss://api.devnet.solana.com",
+            "commitment": "confirmed"
+          },
+          "trading": {
+            "pairs": [
+              {
+                "name": "SOL/USDC",
+                "baseMint": "So11111111111111111111111111111111111111112",
+                "quoteMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+                "enabled": true
+              }
+            ],
+            "limits": {
+              "maxPositionSize": 1.0,
+              "maxDailyTrades": 10,
+              "maxDrawdown": 2.0,
+              "stopLoss": 0.5,
+              "takeProfit": 1.0,
+              "minLiquidity": 10000,
+              "maxVolatility": 0.5,
+              "maxSpread": 0.2
+            }
+          },
+          "risk": {
+            "maxPositionPercentage": 0.01,
+            "maxLeverage": 3.3,
+            "targetDailyReturn": 0.01,
+            "stopLossPercentage": 0.005,
+            "dailyLossLimit": 0.02
+          },
+          "monitoring": {
+            "updateInterval": 5000,
+            "indicators": {
+              "ema": [9, 21, 55, 200],
+              "rsi": {
+                "period": 14,
+                "overbought": 70,
+                "oversold": 30
+              },
+              "volatility": {
+                "bbPeriod": 20,
+                "bbStdDev": 2,
+                "atrPeriod": 14
+              }
+            }
+          }
+        }
+      }
+    }
+  }

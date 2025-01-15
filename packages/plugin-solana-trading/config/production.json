@@ -1,0 +1,30 @@
+{
+    "settings": {
+        "network": {
+            "cluster": "mainnet-beta",
+            "endpoint": "https://api.mainnet-beta.solana.com",
+            "wsEndpoint": "wss://api.mainnet-beta.solana.com"
+        },
+        "trading": {
+            "limits": {
+                "maxPositionSize": 0.01,
+                "maxDailyTrades": 5,
+                "minLiquidity": 50000
+            }
+        },
+        "monitoring": {
+            "updateInterval": 3000,
+            "debug": false,
+            "alertThresholds": {
+                "priceChange": 5,
+                "volumeSpike": 200,
+                "lowLiquidity": 500
+            }
+        },
+        "risk": {
+            "maxPositionPercentage": 0.01,
+            "maxLeverage": 3.3,
+            "dailyLossLimit": 0.02
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "settings": {
+        "network": {
+            "cluster": "devnet",
+            "endpoint": "https://api.devnet.solana.com",
+            "wsEndpoint": "wss://api.devnet.solana.com"
+        },
+        "trading": {
+            "limits": {
+                "maxPositionSize": 0.001,
+                "maxDailyTrades": 10,
+                "minLiquidity": 100
+            }
+        },
+        "monitoring": {
+            "updateInterval": 10000,
+            "debug": true,
+            "alertThresholds": {
+                "priceChange": 2,
+                "volumeSpike": 100,
+                "lowLiquidity": 50
+            }
+        },
+        "risk": {
+            "maxPositionPercentage": 0.001,
+            "maxLeverage": 2.0,
+            "dailyLossLimit": 0.01
+        }
+    }
+}

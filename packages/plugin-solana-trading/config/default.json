@@ -1,0 +1,62 @@
+{
+    "settings": {
+        "network": {
+            "cluster": "devnet",
+            "endpoint": "https://api.devnet.solana.com",
+            "wsEndpoint": "wss://api.devnet.solana.com",
+            "commitment": "confirmed"
+        },
+        "trading": {
+            "pairs": [
+                {
+                    "name": "SOL/USDC",
+                    "baseMint": "So11111111111111111111111111111111111111112",
+                    "quoteMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+                    "enabled": true
+                }
+            ],
+            "limits": {
+                "maxPositionSize": 0.01,
+                "maxDailyTrades": 5,
+                "maxDrawdown": 0.02,
+                "stopLoss": 0.005,
+                "takeProfit": 0.01,
+                "minLiquidity": 1000,
+                "maxVolatility": 0.5,
+                "maxSpread": 0.002
+            }
+        },
+        "monitoring": {
+            "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+            "updateInterval": 5000,
+            "indicators": {
+                "ema": [9, 21, 55, 200],
+                "rsi": {
+                    "period": 14,
+                    "overbought": 70,
+                    "oversold": 30
+                },
+                "volatility": {
+                    "bbPeriod": 20,
+                    "bbStdDev": 2,
+                    "atrPeriod": 14
+                }
+            },
+            "liquidityThreshold": 1000,
+            "volumeThreshold": 10000,
+            "alertThresholds": {
+                "priceChange": 5,
+                "volumeSpike": 200,
+                "lowLiquidity": 500
+            },
+            "debug": false
+        },
+        "risk": {
+            "maxPositionPercentage": 0.01,
+            "maxLeverage": 3.3,
+            "targetDailyReturn": 0.01,
+            "stopLossPercentage": 0.005,
+            "dailyLossLimit": 0.02
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "env": "development",
+    "plugins": {
+      "solana": {
+        "network": "devnet",
+        "rpcEndpoint": "https://api.devnet.solana.com",
+        "wsEndpoint": "wss://api.devnet.solana.com"
+      },
+      "solana-trading": {
+        "settings": {
+          "network": {
+            "cluster": "devnet"
+          },
+          "trading": {
+            "limits": {
+              "maxPositionSize": 0.1,
+              "maxDailyTrades": 20,
+              "maxDrawdown": 1.0,
+              "minLiquidity": 1000
+            }
+          },
+          "monitoring": {
+            "updateInterval": 10000,
+            "debug": true,
+            "testMode": true
+          }
+        }
+      }
+    },
+    "global": {
+      "debug": true,
+      "logLevel": "debug"
+    }
+  }

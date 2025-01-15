@@ -1,0 +1,42 @@
+{
+    // Extend the root Eliza TypeScript configuration
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        // Output configuration
+        "outDir": "dist", // Compiled files go here
+        "rootDir": "src", // Source files location
+        "baseUrl": ".", // Base directory for module resolution
+        // Module resolution settings
+        "paths": {
+            "@/*": [
+                "src/*"
+            ] // Enable @ imports from src directory
+        },
+        // Language and environment settings
+        "target": "ES2020", // Output JavaScript version
+        "module": "ES2020", // Module system to use
+        "moduleResolution": "node", // How to resolve modules
+        // Type checking and compilation settings
+        "esModuleInterop": true, // Better module interop
+        "strict": true, // Enable all strict type checking
+        "skipLibCheck": true, // Skip type checking of declaration files
+        // Generation settings
+        "declaration": true, // Generate .d.ts files
+        "sourceMap": true, // Generate source maps for debugging
+        // Additional settings needed for Eliza plugins
+        "experimentalDecorators": true, // Enable decorators for Eliza
+        "emitDecoratorMetadata": true, // Emit metadata for decorators
+        "resolveJsonModule": true, // Allow importing JSON files
+        "allowSyntheticDefaultImports": true // Allow default imports
+    },
+    // File inclusion/exclusion
+    "include": [
+        "src/**/*" // Include all files under src
+    ],
+    "exclude": [
+        "node_modules", // Don't process node_modules
+        "dist", // Don't process compiled files
+        "**/*.test.ts", // Don't process test files
+        "**/*.spec.ts" // Don't process spec files
+    ]
+}
